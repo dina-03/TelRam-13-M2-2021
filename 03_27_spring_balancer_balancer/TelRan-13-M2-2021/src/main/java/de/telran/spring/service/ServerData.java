@@ -1,5 +1,6 @@
 package de.telran.spring.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -12,7 +13,12 @@ public class ServerData {
     private final int load;
     private final LocalDateTime timeLastUpdate = LocalDateTime.now();
 
-    public ServerData(String host, int port, int load) {
+    public ServerData(@Value("${de.telran.spring.resources.application.properties.gateway.host}")
+                              String host,
+                      @Value("${de.telran.spring.resources.application.properties.udp.balancer.port}")
+                      int port,
+                      @Value("${de.telran.spring.resources.application.properties.load.time.interval}")
+                      int load) {
         this.host = host;
         this.port = port;
         this.load = load;
