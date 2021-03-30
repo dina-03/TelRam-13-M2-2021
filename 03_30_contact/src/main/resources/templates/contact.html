@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="content">
+        <h1 th:text="'contact ' + ${name}"></h1>
+    <div><img src="img/banner03.png" alt="contact" width=""></div>
+    <!--<form action="#" method="post"> -->
+    <div class="clean"></div>
+    <div class="form">
+        <div><a href="#" class="btn">Add</a>
+        <lable for="name"><input type="text" name="name"> </lable>
+        </div>
+        <br>
+        <table class="contact">
+            <tr>
+                <td width="200px">
+                    Tanja:
+                </td>
+                <td></td>
+                <td><a href="#"> <img src="img/edit.png" alt="edit" width="20px"> </a></td>
+                <td><a href="#"><img src="img/delete.png" alt="edit" width="20px"></a></td>
+            </tr>
+        </table>
+        <br>
+        <table class="contact">
+            <tr>
+                <td width="200px">Vasja:</td>
+                <td></td>
+                <td><a href="#"> <img src="img/edit.png" alt="edit" width="20px"> </a></td>
+                <td><a href="#"><img src="img/delete.png" alt="edit" width="20px"></a></td>
+
+            </tr>
+        </table>
+        <br>
+        <table class="contact">
+            <tr>
+                <td width="200px">Petja:</td>
+                <td></td>
+                <td><a href="#"> <img src="img/edit.png" alt="edit" width="20px"> </a></td>
+                <td><a href="#"><img src="img/delete.png" alt="edit" width="20px"></a></td>
+            </tr>
+        </table>
+        <br>
+    </div>
+    <!--   </form> -->
+</div>
+</body>
+</html>
