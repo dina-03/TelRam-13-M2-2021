@@ -15,15 +15,15 @@ h1 {
 .content{
     margin:auto 30%;
 }
-
+/*
 table.contact {
     width: 100%;
     padding: 10px 15px;
     font-family: "Droid Sans Mono";
     border-bottom: 1px solid cadetblue;
     border-radius: 1px;
-}
-table:hover{
+}*/
+.contact:hover{
     background-color: #cdfad7;
 }
 
@@ -31,6 +31,11 @@ table:hover{
     font-size: 22px;
     color: darkgreen;
     background: white;
+    width: 100%;
+    padding: 10px 15px;
+    font-family: "Droid Sans Mono";
+    border-bottom: 1px solid cadetblue;
+    border-radius: 1px;
 }
 .btn{
     background-color: #99cccc;
