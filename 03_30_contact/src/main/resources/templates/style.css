@@ -17,11 +17,11 @@ h1 {
 }
 
 table.contact {
-    width: 300px;
+    width: 100%;
     padding: 10px 15px;
     font-family: "Droid Sans Mono";
-    border: 1px solid cadetblue;
-    border-radius: 3px;
+    border-bottom: 1px solid cadetblue;
+    border-radius: 1px;
 }
 table:hover{
     background-color: #cdfad7;
