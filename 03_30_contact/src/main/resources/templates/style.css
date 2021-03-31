@@ -24,7 +24,10 @@ table.contact {
     border-radius: 1px;
 }*/
 .contact:hover{
-    background-color: #cdfad7;
+    background-color: #f8f7f7;
+}
+.line{
+    border-top: 1px solid cadetblue;
 }
 
 .contact {
@@ -35,7 +38,8 @@ table.contact {
     padding: 10px 15px;
     font-family: "Droid Sans Mono";
     border-bottom: 1px solid cadetblue;
-    border-radius: 1px;
+    border-left: 1px solid cadetblue;
+    border-radius: 2px;
 }
 .btn{
     background-color: #99cccc;
@@ -56,4 +60,7 @@ table.contact {
     border: 1px solid cadetblue;
     border-radius: 3px;
     background: #e2fae2;
+}
+.icon:hover{
+transform:scale(1.3);
 }
