@@ -37,4 +37,25 @@ public class HelloController {
     public String acceptAuto(@RequestBody Auto auto){
         return "The following auto was received: " + "make: " + auto.make + ", color: " + auto.color;
     }
+
+    @PatchMapping("/auto")
+    @ResponseBody
+    public String patchAuto(@RequestBody Auto auto){
+        System.out.println(auto);
+        return "The following auto was received: " + "make: " + auto.make + ", color: " + auto.color;
+    }
+
+    @PutMapping("/auto")
+    @ResponseBody
+    public String putAuto(@RequestBody Auto auto){
+        System.out.println(auto);
+        return "The following auto was received: " + "make: " + auto.make + ", color: " + auto.color;
+    }
+
+    @DeleteMapping("/auto")
+    @ResponseBody
+    public String deleteAuto(){
+        String response = "deleted";
+        return response;
+    }
 }
