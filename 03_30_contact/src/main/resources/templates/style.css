@@ -13,16 +13,14 @@ h1 {
 }
 
 .content{
-    margin:auto 30%;
+    width: 70%;
+    margin:auto auto;
 }
-/*
-table.contact {
+.bann{
+    margin-top: -5px;
     width: 100%;
-    padding: 10px 15px;
-    font-family: "Droid Sans Mono";
-    border-bottom: 1px solid cadetblue;
-    border-radius: 1px;
-}*/
+}
+
 .contact:hover{
     background-color: #f8f7f7;
 }
@@ -30,7 +28,7 @@ table.contact {
     border-top: 1px solid cadetblue;
 }
 
-.contact {
+.contact1 {
     font-size: 22px;
     color: darkgreen;
     background: white;
