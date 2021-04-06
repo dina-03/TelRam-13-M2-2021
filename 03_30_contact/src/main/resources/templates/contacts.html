@@ -15,16 +15,16 @@
 
 <div class="row">
     <div class="col m6 offset-m3">
-          <!--  <div><img src="banner03.png" alt="banner" class="responsive-img"></div>-->
-          <nav class="nav-wrapper teal">
-        <div class="nav-wrapper teal">
-             <a href="#" class="brand-logo right">CONTACT <i class="large material-icons">assignment_ind</i></a>
-             <ul id="nav-mobile" class="left hide-on-med-and-down">
-                 <li><a th:href="'/contacts/'">Contacts</a></li>
-                 <li><a th:href="'/add-contact/'">Contact-form</a></li>
-             </ul>
-         </div>
-         </nav>
+        <!--  <div><img src="banner03.png" alt="banner" class="responsive-img"></div>-->
+        <nav class="nav-wrapper teal">
+            <div class="nav-wrapper teal">
+                <a href="#" class="brand-logo right">CONTACT <i class="large material-icons">assignment_ind</i></a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a th:href="'/contacts/'">Contacts</a></li>
+                    <li><a th:href="'/add-contact/'">Contact-form</a></li>
+                </ul>
+            </div>
+        </nav>
 
         <div style="height: 10px"></div>
         <h4 style="color: darkgreen">Main Page</h4>
@@ -32,21 +32,25 @@
             <i class="material-icons">playlist_add</i></a>
         </div>
         <div class="col s12">
+            <div class="card">
+                <div class="card-content">
+                    <ul class="collection with-header">
+                        <li class="collection-item" th:each="contact: ${contacts}">
+                            <a th:href="'/contacts/'+${contact.id}" class="badge">
+                                <span th:text="${contact.name}" style="color: darkcyan"></span>
+                                <span th:text="${contact.lastName}" style="color: darkcyan"></span></a>
+                            <!--<span th:text="${contact.age}" style="color: darkcyan"></span></a>-->
+                            <a th:href="'/delete-contact/' +${contact.id}" class="secondary-content">
+                                <i class="material-icons waves-light red-text">delete</i>
+                            </a>
+                            <a th:href="'/edit-contact/' +${contact.id}" class="secondary-content">
+                                <i class="material-icons teal-text">edit</i>&nbsp;&nbsp;&nbsp;
+                            </a>
 
-            <ul class="collection with-header">
-                <li class="collection-item" th:each="contact: ${contacts}"><a th:href="'/contacts/'+${contact.id}">
-                    <span th:text="${contact.name}" style="color: darkcyan"></span>
-                    <span th:text="${contact.lastName}" style="color: darkcyan"></span></a>
-                    <!--<span th:text="${contact.age}" style="color: darkcyan"></span></a>-->
-                    <a th:href="'/delete-contact/' +${contact.id}" class="secondary-content">
-                        <i class="material-icons waves-light red-text">delete</i>
-                    </a>
-                    <a th:href="'/edit-contact/' +${contact.id}" class="secondary-content">
-                        <i class="material-icons teal-text">edit</i>&nbsp;&nbsp;&nbsp;
-                    </a>
-                </li>
-            </ul>
-
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
