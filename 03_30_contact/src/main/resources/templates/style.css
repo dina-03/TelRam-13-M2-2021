@@ -1,0 +1,67 @@
+body {
+    position: center;
+}
+
+h1 {
+    font-family: Athelas;
+    color: darkcyan;
+}
+.title{
+    float: left;
+    padding-right: 50px;
+  /*  background-image: url("img/banner-contact.png");*/
+}
+
+.content{
+    margin:auto 30%;
+}
+/*
+table.contact {
+    width: 100%;
+    padding: 10px 15px;
+    font-family: "Droid Sans Mono";
+    border-bottom: 1px solid cadetblue;
+    border-radius: 1px;
+}*/
+.contact:hover{
+    background-color: #f8f7f7;
+}
+.line{
+    border-top: 1px solid cadetblue;
+}
+
+.contact {
+    font-size: 22px;
+    color: darkgreen;
+    background: white;
+    width: 100%;
+    padding: 10px 15px;
+    font-family: "Droid Sans Mono";
+    border-bottom: 1px solid cadetblue;
+    border-left: 1px solid cadetblue;
+    border-right: 1px solid cadetblue;
+    border-radius: 3px;
+}
+.btn{
+    background-color: #99cccc;
+    border: 1px solid cornflowerblue;
+    border-radius: 3px;
+    padding: 2px 15px;
+    text-decoration: none;
+}
+.btn:hover{
+    background-color: #96d4b2;
+    color: #ffffff;
+}
+.clean{
+    height: 20px;
+}
+.form{
+    padding:25px 20px 15px 20px;
+    border: 1px solid cadetblue;
+    border-radius: 3px;
+    background: #e2fae2;
+}
+.icon:hover{
+transform:scale(1.3);
+}
