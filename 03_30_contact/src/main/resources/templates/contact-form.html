@@ -41,14 +41,16 @@
                     <div class="row">
                         <div class="input-field col s6 left">
                             <i class="material-icons prefix">check</i>
-                            <input id="age" type="number" max="120" min="16" step="1" value="18" class="validate"
+                            <input id="age" type="number" max="120" min="16" step="1" value="18"
+                                   class="validate"
                                    th:field="*{age}">
                             <label for="age">Age</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6 right">
-                            <button class="waves-effect waves-light btn" value="Save"><i class="material-icons left">save</i>Save
+                            <button class="waves-effect waves-light btn" value="Save"><i
+                                    class="material-icons left">save</i>Save
                             </button>
                             <a th:href="'/contacts/'" class="waves-effect waves-light btn"><i
                                     class="material-icons right" th:href="'/contacts/'">cancel</i>Cancel</a>
