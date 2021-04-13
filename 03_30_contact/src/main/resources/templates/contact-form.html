@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Contact form</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../static/style.css">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -40,6 +40,11 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">mail_outline</i>
+                            <input id="email" type="text" class="validate" th:field="*{email}">
+                            <label for="email">E-mail</label>
+                        </div>
                         <div class="input-field col s6 left">
                             <i class="material-icons prefix">check</i>
                             <input id="age" type="number" max="120" min="16" step="1" value="18"
