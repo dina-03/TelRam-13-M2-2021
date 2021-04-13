@@ -1,21 +1,26 @@
 package de.telran.contact.repo;
 
 import de.telran.contact.entity.Contact;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.concurrent.atomic.AtomicInteger;
 
-public class ContactRepoMap implements IContactRepo{
+@Repository
+public class ContactRepoMap implements IContactRepo {
 
-   private HashMap<Integer, Contact> contactById;
-
-    public ContactRepoMap(HashMap<Integer, Contact> contactById) {
-        this.contactById = new HashMap<>(contactById) ;
-    }
+    private final HashMap<Integer, Contact> contactById = new HashMap<>();
+    AtomicInteger currentId = new AtomicInteger();
 
     @Override
     public void save(Contact contact) {
+        if (contact.getId() == 0) {
+            contact.setId(currentId.incrementAndGet());
+        } else if (!contactById.containsKey(contact.getId()))
+            throw new NoSuchElementException();
         contactById.put(contact.getId(), contact);
     }
 

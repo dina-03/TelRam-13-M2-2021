@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-
+//Controller is like a gateway for interaction with outside
 @Controller
 public class ContactController {
 
@@ -23,7 +23,7 @@ public class ContactController {
      *
      * @return
      */
-    @GetMapping({"/contacts", "/"})
+    @GetMapping({"/contacts"/*, "/"*/})
     public String contacts(Model model) {
         List<Contact> contacts = contactService.getAll();
         model.addAttribute("contacts", contacts);
