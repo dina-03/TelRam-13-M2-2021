@@ -1,4 +1,16 @@
 # Compiled class file
+*
+*.*
+
+!/*
+!/*/*
+!/*/*/pom.xml
+!/*/*/gradlew
+!/*/*/gradlew.bat
+!/*/*/settings.gradle
+!/*/*/build.gradle
+!/*/*/gradle/
+!/*/*/gradle/**/*
 *.class
 
 # Log file
