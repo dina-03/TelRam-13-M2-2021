@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+<div class="row">
+    <div class="col m6 offset-m3">
+         <div><img src="/img/banner03.png" alt="banner" class="responsive-img"></div>
+        <!-- <nav class="nav-wrapper teal">
+             <div class="nav-wrapper teal">
+                 <a href="#" class="brand-logo right">CONTACT <i class="large material-icons">assignment_ind</i></a>
+                 <ul id="nav-mobile" class="left hide-on-med-and-down">
+                     <li><a th:href="'/contacts/'">Contacts</a></li>
+                     <li><a th:href="'/add-contact/'">Contact-form</a></li>
+                 </ul>
+             </div>
+        </nav>-->
+        <!-- <img src="/img/banner03.png" alt="logo">-->
+
+        <div style="height: 10px"></div>
+        <h4 style="color: darkgreen">Main Page</h4>
+        <div><a th:href="'/add-contact/'" class="btn-floating btn-large waves-effect waves-light #009688 teal">
+            <i class="material-icons">playlist_add</i></a>
+        </div>
+        <div class="col s12">
+            <div class="card">
+                <div class="card-content">
+                    <ul class="collection with-header">
+                        <li class="collection-item" th:each="contact: ${contacts}">
+                            <a th:href="'/contacts/'+${contact.id}" class="badge">
+                                <span th:text="${contact.name}" style="color: darkcyan"></span>
+                                <span th:text="${contact.lastName}" style="color: darkcyan"></span></a>
+                            <!--<span th:text="${contact.age}" style="color: darkcyan"></span></a>-->
+                            <a th:href="'/delete-contact/' +${contact.id}" class="secondary-content">
+                                <i class="material-icons waves-light red-text">delete</i>
+                            </a>
+                            <a th:href="'/edit-contact/' +${contact.id}" class="secondary-content">
+                                <i class="material-icons teal-text">edit</i>&nbsp;&nbsp;&nbsp;
+                            </a>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+        <div class="footer-copyright" style="text-align: center">
+            <div style="height: 130px"></div>
+            <div class="container" style="color: darkcyan">
+                <br><br><br>
+                <img src="/img/line.png" alt="line">
+                <br><br>
+                © 2021 Copyright TelRan
+            </div>
+        </div>
+        </footer>
+    </div>
+</div>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
