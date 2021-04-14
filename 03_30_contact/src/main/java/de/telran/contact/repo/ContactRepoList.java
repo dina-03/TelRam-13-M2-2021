@@ -4,31 +4,33 @@ import de.telran.contact.entity.Contact;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.concurrent.atomic.AtomicInteger;
 
-@Component
+//@Component
 public class ContactRepoList implements IContactRepo {
 
-   private ArrayList<Contact> contacts = new ArrayList<>();
-   private int lastUsedId;
+    private ArrayList<Contact> contacts = new ArrayList<>();
+    // private int lastUsedId;
+    AtomicInteger currentId = new AtomicInteger();
 
 
     @Override
     public void save(Contact contact) {
         if (contact.getId() <= 0) {
-            contact.setId(++lastUsedId);
+            // contact.setId(++lastUsedId);
+            contact.setId(currentId.incrementAndGet());
             contacts.add(contact);
         } else {
-            Contact oldContact = contacts.stream()
-                    .filter(cont -> cont.getId() == contact.getId())
-                    .findFirst()
-                    .orElseThrow(NoSuchElementException::new);
+            Contact oldContact = find(contact.getId());
             oldContact.setName(contact.getName());
             oldContact.setLastName(contact.getLastName());
             oldContact.setAge(contact.getAge());
         }
     }
+
 
     @Override
     public Contact find(int id) {
@@ -41,12 +43,15 @@ public class ContactRepoList implements IContactRepo {
 
     @Override
     public Contact remove(int id) {
-        int currentId = getIndex(id);
+        /*int currentId = getIndex(id);
         Contact contact = contacts.remove(currentId);
-        return contact;
+        return contact;*/
+        Contact res = find(id);
+        contacts.remove(res);
+        return res;
     }
 
-    private int getIndex(int index) {
+   /* private int getIndex(int index) {
         for (int i = 0; i < contacts.size(); i++) {
             Contact contact = contacts.get(i);
             if (contact.getId() == index) {
@@ -54,10 +59,10 @@ public class ContactRepoList implements IContactRepo {
             }
         }
         return -1;
-    }
+    }*/
 
     @Override
     public List<Contact> findAll() {
-        return contacts;
+        return Collections.unmodifiableList(contacts);
     }
 }

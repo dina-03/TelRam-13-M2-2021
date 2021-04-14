@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>User details</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../static/style.css">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -11,7 +11,8 @@
 <body>
 <div class="row">
     <div class="col m6 offset-m3">
-        <nav>
+        <div><img src="/img/banner03.png" alt="banner" class="responsive-img"></div>
+       <!-- <nav>
             <div class="nav-wrapper teal">
                 <a href="#" class="brand-logo right">CONTACT <i class="large material-icons">assignment_ind</i></a>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -19,7 +20,7 @@
                     <li><a href="#">Contact-form</a></li>
                 </ul>
             </div>
-        </nav>
+        </nav>-->
 
         <div style="height: 10px"></div>
         <div class="col s12">
@@ -42,6 +43,11 @@
 
                                 </li>
                                 <li class="collection-item" style="color: darkcyan">
+                                    <strong>E-Mail:</strong><span class="badge"
+                                                                     th:text="${contact.email}"></span>
+
+                                </li>
+                                <li class="collection-item" style="color: darkcyan">
                                     <strong>Age:</strong><span class="badge"
                                                                     th:text="${contact.age}"></span>
                                 </li>
@@ -54,9 +60,16 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
+        <footer>
+        <div class="footer-copyright" style="text-align: center">
+            <div class="container" style="color: darkcyan">
+                <br><br><br>
+                <img src="/img/line.png" alt="line">
+                <br><br>
+                © 2021 Copyright TelRan</div>
+        </div>
+        </footer>
     </div>
 </div>
 <!-- Compiled and minified JavaScript -->

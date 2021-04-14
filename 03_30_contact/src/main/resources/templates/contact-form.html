@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:color="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Contact form</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../static/style.css">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -11,7 +11,8 @@
 <body>
 <div class="row">
     <div class="col m6 offset-m3">
-        <nav>
+        <div><img src="/img/banner03.png" alt="banner" class="responsive-img"></div>
+        <!--<nav>
             <div class="nav-wrapper teal">
                 <a href="#" class="brand-logo right">CONTACT<i class="large material-icons">assignment_ind</i></a>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -19,7 +20,7 @@
                     <li><a href="#">Contact-form</a></li>
                 </ul>
             </div>
-        </nav>
+        </nav>-->
         <div style="height: 10px"></div>
         <div class="col s12">
             <h4 style="color: darkgreen">Add / Edit user</h4>
@@ -39,6 +40,11 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">mail_outline</i>
+                            <input id="email" type="text" class="validate" th:field="*{email}">
+                            <label for="email">E-mail</label>
+                        </div>
                         <div class="input-field col s6 left">
                             <i class="material-icons prefix">check</i>
                             <input id="age" type="number" max="120" min="16" step="1" value="18"
@@ -59,6 +65,15 @@
                 </form>
             </div>
         </div>
+        <footer>
+            <div class="footer-copyright" style="text-align: center">
+                <div class="container" style="color: darkcyan">
+                    <br><br><br>
+                    <img src="/img/line.png" alt="line">
+                    <br><br>
+                    © 2021 Copyright TelRan</div>
+            </div>
+        </footer>
     </div>
 </div>
 <!-- Compiled and minified JavaScript -->
