@@ -1,5 +1,6 @@
 package de.telran.contacts_db.controller;
 
+import de.telran.contacts_db.dto.SearchFormDto;
 import de.telran.contacts_db.entity.Contact;
 import de.telran.contacts_db.service.ContactService;
 import org.springframework.stereotype.Controller;
@@ -90,5 +91,12 @@ public class ContactController {
     public String deleteContact(@PathVariable int id) {
         contactService.remove(id);
         return "redirect:/contacts";
+    }
+
+    @PostMapping("/contacts/search")
+    public String searchContacts(@ModelAttribute SearchFormDto searchForm, Model model) {
+        List<Contact> contacts = contactService.searchByNameOrLastName(searchForm.searchPattern);
+        model.addAttribute("contacts", contacts);
+        return "contacts";
     }
 }

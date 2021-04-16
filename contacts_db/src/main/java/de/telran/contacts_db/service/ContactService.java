@@ -40,4 +40,8 @@ public class ContactService {
         contactRepo.deleteById(id);
         return res;
     }
+
+    public List<Contact> searchByNameOrLastName(String pattern){
+        return new ArrayList<>(contactRepo.findAllByNameContainingIgnoreCaseOrLastNameContainingIgnoreCase(pattern,pattern));
+    }
 }

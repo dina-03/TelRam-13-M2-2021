@@ -15,23 +15,40 @@
 
 <div class="row">
     <div class="col m6 offset-m3">
-         <div><img src="/img/banner03.png" alt="banner" class="responsive-img"></div>
-        <!-- <nav class="nav-wrapper teal">
-             <div class="nav-wrapper teal">
-                 <a href="#" class="brand-logo right">CONTACT <i class="large material-icons">assignment_ind</i></a>
-                 <ul id="nav-mobile" class="left hide-on-med-and-down">
-                     <li><a th:href="'/contacts/'">Contacts</a></li>
-                     <li><a th:href="'/add-contact/'">Contact-form</a></li>
-                 </ul>
-             </div>
-        </nav>-->
-        <!-- <img src="/img/banner03.png" alt="logo">-->
-
+        <div><img src="/img/banner03.png" alt="banner" class="responsive-img"></div>
         <div style="height: 10px"></div>
+
         <h4 style="color: darkgreen">Main Page</h4>
+        <div class="col s12">
+            <div class="input-field col s12">
+                <form class="col s12" action="/contacts/search" method="post">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">visibility</i>
+                        <input id="icon_prefix2" type="text" class="materialize-textarea" name="searchPattern"
+                               placeholder="search for name or lastname"></input></div>
+                    <div class="input-field col s6">
+                        <button class="waves-effect waves-light btn" role="button" name="action"><i
+                                class="material-icons left">search</i>Search</button>&nbsp;
+                        <a th:href="'/contacts/'" class="waves-effect waves-light btn"><i class="material-icons right">refresh</i>Refresh</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- <div class="col s12">
+             <div class="search" style="text-align: right">
+                 <form action="/contacts/search" method="post">
+                     <input type="text" class="form-control" name="searchPattern" placeholder="search for name or lastname">
+                     <button class="waves-effect waves-light btn" role="button" name="action">Search
+                     </button> &nbsp;&nbsp;
+                     <a th:href="'/contacts/'" class="waves-effect waves-light btn">Cancel</a>
+                 </form>
+             </div>
+         </div>-->
+
         <div><a th:href="'/add-contact/'" class="btn-floating btn-large waves-effect waves-light #009688 teal">
             <i class="material-icons">playlist_add</i></a>
         </div>
+        <div style="height: 10px"></div>
         <div class="col s12">
             <div class="card">
                 <div class="card-content">
@@ -55,15 +72,15 @@
         </div>
 
         <footer>
-        <div class="footer-copyright" style="text-align: center">
-            <div style="height: 130px"></div>
-            <div class="container" style="color: darkcyan">
-                <br><br><br>
-                <img src="/img/line.png" alt="line">
-                <br><br>
-                © 2021 Copyright TelRan
+            <div class="footer-copyright" style="text-align: center">
+                <div style="height: 130px"></div>
+                <div class="container" style="color: darkcyan">
+                    <br><br><br>
+                    <img src="/img/line.png" alt="line">
+                    <br><br>
+                    © 2021 Copyright TelRan
+                </div>
             </div>
-        </div>
         </footer>
     </div>
 </div>
